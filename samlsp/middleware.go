@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"net/http"
 
-	"github.com/crewjam/saml"
+	"github.com/bneil/saml"
 )
 
 // Middleware implements middleware than allows a web application
@@ -92,7 +92,7 @@ func (m *Middleware) ServeACS(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-        println("DefaultRedirectURI:",m.ServiceProvider.DefaultRedirectURI)
+	println("DefaultRedirectURI:", m.ServiceProvider.DefaultRedirectURI)
 	m.CreateSessionFromAssertion(w, r, assertion, m.ServiceProvider.DefaultRedirectURI)
 	return
 }
@@ -192,7 +192,7 @@ func (m *Middleware) CreateSessionFromAssertion(w http.ResponseWriter, r *http.R
 		}
 		m.RequestTracker.StopTrackingRequest(w, r, trackedRequestIndex)
 
-                println("tracked request index interception", trackedRequest.URI)
+		println("tracked request index interception", trackedRequest.URI)
 		redirectURI = trackedRequest.URI
 	}
 
@@ -201,7 +201,7 @@ func (m *Middleware) CreateSessionFromAssertion(w http.ResponseWriter, r *http.R
 		return
 	}
 
-        println("redirecting:", redirectURI)
+	println("redirecting:", redirectURI)
 	http.Redirect(w, r, redirectURI, http.StatusFound)
 }
 

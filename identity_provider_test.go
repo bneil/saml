@@ -24,9 +24,9 @@ import (
 	"github.com/beevik/etree"
 	"github.com/golang-jwt/jwt/v4"
 
-	"github.com/crewjam/saml/logger"
-	"github.com/crewjam/saml/testsaml"
-	"github.com/crewjam/saml/xmlenc"
+	"github.com/bneil/saml/logger"
+	"github.com/bneil/saml/testsaml"
+	"github.com/bneil/saml/xmlenc"
 )
 
 type IdentityProviderTest struct {
