@@ -1,6 +1,6 @@
 module github.com/bneil/saml
 
-go 1.18
+go 1.17
 
 require (
 	github.com/beevik/etree v1.1.0
